@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Olá Amigos 🐨
 
-## Getting Started
+A playful web app that teaches **European (Portugal) Portuguese** to **English-speaking girls aged 3–7**. Lua the koala guides children through short, picture-and-audio lessons — no reading required for the youngest, with English words shown for those who can read a little.
 
-First, run the development server:
+## What's inside
+
+- **Lua the koala** guides every screen, speaking Portuguese and explaining it in English.
+- **Four learning trees** Lua climbs, one after another. The first, *Olá!*, has three units:
+  - *Olá e adeus* — hello, goodbye, please, thank you, yes, no
+  - *O meu nome* — what's your name?, my name is…, I am…
+  - *Como estás?* — how are you?, happy, sad, angry, tired, hungry, sleepy
+- **Activities:** meet the words, listen and tap the right picture, and repeat after Lua (spoken out loud — no microphone). More are planned.
+- **Stickers** for each finished unit, and units unlock one at a time.
+- **Portugal Portuguese only.** Native-sounding pt-PT voices, *tu* forms, and a build check that rejects Brazilian words and grammar.
+- **A parent area**, behind a hold-to-open lock, listing every word with its English meaning and how to say it.
+- **Private by design.** No accounts, ads or analytics — progress is saved only in the browser.
+
+## Tech
+
+Next.js 15 (App Router) · TypeScript · Tailwind CSS · Framer Motion · Howler.js · Zustand · Vitest. Audio is generated with Azure neural text-to-speech. The site is a fully static export hosted on Netlify.
+
+## Getting started
+
+Requires Node.js 22.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Command | What it does |
+|---|---|
+| `npm run dev` | Start the development server |
+| `npm run build` | Check the content, then build the static site into `out/` |
+| `npm test` | Run the tests |
+| `npm run lint` | Lint the code |
+| `npm run lint:content` | Check lesson content (pt-PT words, pictures, audio) |
+| `npm run audio` | Generate audio for any words that don't have it yet |
+| `npm run icons` | Rebuild the favicons from `app/icon.svg` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Adding words and audio
 
-## Learn More
+Lessons are plain data in `content/`: words in `content/vocab.ts`, units in `content/units/`. After adding a word, generate its audio:
 
-To learn more about Next.js, take a look at the following resources:
+1. Create an Azure Speech resource (the free tier is plenty).
+2. Copy `.env.example` to `.env.local` and add your `AZURE_SPEECH_KEY` and `AZURE_SPEECH_REGION`.
+3. Run `npm run audio`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The build fails if any word is missing its audio. Have a native speaker from Portugal check new Portuguese audio.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Netlify builds the site using `netlify.toml`: it generates any missing audio, then builds and publishes `out/`. To let Netlify generate audio for new words, add `AZURE_SPEECH_KEY` (as a secret) and `AZURE_SPEECH_REGION` under **Site configuration → Environment variables**.
