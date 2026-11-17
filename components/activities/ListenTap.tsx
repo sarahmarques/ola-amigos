@@ -76,6 +76,7 @@ export function ListenTap({ activity, onDone, lua }: ActivityProps<"listen-tap">
               key={id}
               emoji={w.emoji}
               label={w.en}
+              caption={w.en}
               state={stateOf(id)}
               onTap={() => tap(id)}
               disabled={solved}
