@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* Koala theme: eucalyptus greens, soft koala greys, warm cream,
+   wattle yellow and blossom pink. Always light — kids' UI. */
+@theme inline {
+  --font-sans: var(--font-andika), "Andika", system-ui, sans-serif;
+
+  --color-gum: #4a8a68;        /* eucalyptus green — primary */
+  --color-gum-deep: #2f6249;   /* dark eucalyptus — text, shadows */
+  --color-leaf: #a8d8b0;       /* young eucalyptus leaf */
+  --color-mint: #e3f3e6;       /* pale leaf wash */
+  --color-fur: #a3adb8;        /* koala grey */
+  --color-fur-light: #e6eaee;  /* koala belly / ears */
+  --color-blossom: #f6a8bb;    /* gum blossom pink */
+  --color-wattle: #f7c948;     /* wattle yellow */
+  --color-bark: #8b6b4e;       /* tree bark */
+  --color-cream: #fbf6ea;
+  --color-ink: #26352d;
+}
+
+html,
+body {
+  min-height: 100%;
+  /* Slide-in and wobble animations must never cause sideways scrolling. */
+  overflow-x: clip;
+}
+
+body {
+  background: linear-gradient(180deg, #d9f0ee 0%, #e3f3e6 50%, #fbf6ea 100%);
+  background-attachment: fixed;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  /* Stop accidental text selection / zoom when small hands tap fast */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Visible, chunky focus ring for keyboard users */
+:focus-visible {
+  outline: 4px solid var(--color-gum-deep);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
