@@ -5,7 +5,9 @@
  *   npm run audio -- --dry-run   # list what would be created
  *   npm run audio -- --force     # regenerate everything (e.g. after changing voice)
  *
- * Needs AZURE_SPEECH_KEY and AZURE_SPEECH_REGION in .env.local (see .env.example).
+ * Needs AZURE_SPEECH_KEY and AZURE_SPEECH_REGION, either as environment variables
+ * (e.g. set in Netlify's site settings) or in .env.local / .env (see .env.example).
+ * The key is only needed when there are files to create.
  * Portuguese is always spoken by a pt-PT voice; the script refuses anything else,
  * so a Brazilian voice can never slip in.
  */
@@ -17,7 +19,8 @@ const args = new Set(process.argv.slice(2));
 const dryRun = args.has("--dry-run");
 const force = args.has("--force");
 
-// Settings can live in .env.local or .env (both are git-ignored). .env.local wins.
+// Real environment variables (e.g. from Netlify) win; then .env.local, then .env.
+// Both files are git-ignored. Files never override a value that's already set.
 for (const file of [".env.local", ".env"]) {
   if (existsSync(file)) process.loadEnvFile(file);
 }
@@ -87,7 +90,7 @@ async function main() {
   const key = process.env.AZURE_SPEECH_KEY;
   const region = process.env.AZURE_SPEECH_REGION;
   if (!key || !region) {
-    console.error("Missing AZURE_SPEECH_KEY or AZURE_SPEECH_REGION. Copy .env.example to .env.local (or .env) and fill them in.");
+    console.error("Missing AZURE_SPEECH_KEY or AZURE_SPEECH_REGION. Set them as environment variables (on Netlify: Site configuration → Environment variables) or copy .env.example to .env.local and fill them in.");
     process.exit(1);
   }
 

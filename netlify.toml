@@ -1,7 +1,16 @@
 # Netlify settings for Olá Amigos — a fully static Next.js export.
-# The audio files are committed, so the build needs no Azure key.
+#
+# The build first creates audio for any word that doesn't have it yet, then
+# builds the site. Existing (committed) audio is never regenerated, so when no
+# words are new, the Azure key isn't even used.
+#
+# Set these in Netlify → Site configuration → Environment variables:
+#   AZURE_SPEECH_KEY     (mark as secret; scope: Builds)
+#   AZURE_SPEECH_REGION  e.g. uksouth
+#   PT_VOICE, EN_VOICE   optional, see .env.example
+# Never prefix them with NEXT_PUBLIC_ — that would publish the key in the website.
 [build]
-  command = "npm run build"
+  command = "npm run audio && npm run build"
   publish = "out"
 
 [build.environment]
