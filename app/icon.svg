@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Lua the koala: big fluffy ears, grey face, big nose — bold shapes so it reads at 16px -->
+  <g stroke="#5b6570" stroke-width="2.5">
+    <circle cx="14" cy="19" r="13" fill="#a3adb8"/>
+    <circle cx="50" cy="19" r="13" fill="#a3adb8"/>
+  </g>
+  <circle cx="15" cy="20" r="7" fill="#f6c6d2"/>
+  <circle cx="49" cy="20" r="7" fill="#f6c6d2"/>
+  <ellipse cx="32" cy="37" rx="22" ry="20" fill="#a3adb8" stroke="#5b6570" stroke-width="2.5"/>
+  <circle cx="17" cy="43" r="3.5" fill="#f6a8bb" opacity="0.75"/>
+  <circle cx="47" cy="43" r="3.5" fill="#f6a8bb" opacity="0.75"/>
+  <circle cx="23.5" cy="32" r="3.2" fill="#26352d"/>
+  <circle cx="40.5" cy="32" r="3.2" fill="#26352d"/>
+  <circle cx="24.5" cy="31" r="1.1" fill="#fff"/>
+  <circle cx="41.5" cy="31" r="1.1" fill="#fff"/>
+  <ellipse cx="32" cy="42" rx="6.5" ry="8.5" fill="#3a4048"/>
+  <ellipse cx="29.8" cy="38.5" rx="1.8" ry="2.6" fill="#fff" opacity="0.35"/>
+</svg>

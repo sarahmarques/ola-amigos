@@ -10,7 +10,8 @@
     "audio": "tsx scripts/generate-audio.ts",
     "lint:content": "tsx scripts/lint-content.ts",
     "test": "vitest run",
-    "prebuild": "npm run lint:content -- --strict"
+    "prebuild": "npm run lint:content -- --strict",
+    "icons": "tsx scripts/generate-icons.ts"
   },
   "dependencies": {
     "framer-motion": "^11.18.2",
