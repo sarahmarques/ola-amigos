@@ -20,8 +20,8 @@ export const vocab: Word[] = [
 
   // ── Tree 1 · Unit: My name ──────────────────────────────────────────
   { id: "como-te-chamas", pt: "Como te chamas?", en: "What's your name?", emoji: "❓", hint: "KOH-moo t' SHUH-mush", note: "Uses 'tu' — how you talk to a child in Portugal." },
-  { id: "chamo-me", pt: "Chamo-me…", en: "My name is…", emoji: "🙋", hint: "SHUH-moo-m'", note: "In Portugal the 'me' goes after the verb: Chamo-me." },
-  { id: "eu-sou", pt: "Eu sou…", en: "I am…", emoji: "🙋‍♀️", hint: "AY-oo soh" },
+  { id: "chamo-me", pt: "Chamo-me…", en: "My name is…", emoji: "🙋‍♀️", hint: "SHUH-moo-m'", note: "In Portugal the 'me' goes after the verb: Chamo-me." },
+  { id: "eu-sou", pt: "Eu sou…", en: "I am…", emoji: "💁‍♀️", hint: "AY-oo soh" },
   { id: "o-menino", pt: "o menino", en: "the boy", emoji: "👦", hint: "oo m'-NEE-noo", gender: "m" },
   { id: "a-menina", pt: "a menina", en: "the girl", emoji: "👧", hint: "uh m'-NEE-nuh", gender: "f" },
   { id: "o-amigo", pt: "o amigo", en: "the friend (boy)", emoji: "🧑‍🤝‍🧑", hint: "oo uh-MEE-goo", gender: "m" },

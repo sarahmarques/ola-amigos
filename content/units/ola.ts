@@ -21,7 +21,7 @@ export const olaUnits: Unit[] = [
     id: "o-meu-nome",
     treeId: "ola",
     title: { pt: "O meu nome", en: "My name" },
-    emoji: "🙋",
+    emoji: "🙋‍♀️",
     sticker: "🦉",
     wordIds: ["como-te-chamas", "chamo-me", "eu-sou", "o-menino", "a-menina", "o-amigo", "a-amiga", "muito-prazer"],
     activities: [
@@ -38,14 +38,14 @@ export const olaUnits: Unit[] = [
     title: { pt: "Como estás?", en: "How are you?" },
     emoji: "😊",
     sticker: "🐨",
-    wordIds: ["como-estas", "estou-bem", "contente", "triste", "zangado", "cansado", "com-fome", "com-sono"],
+    wordIds: ["como-estas", "estou-bem", "contente", "triste", "zangada", "cansada", "com-fome", "com-sono"],
     activities: [
       { type: "introduce", wordIds: ["como-estas", "estou-bem", "contente", "triste"] },
       { type: "listen-tap", wordIds: ["contente", "triste", "estou-bem"], choices: 2 },
-      { type: "introduce", wordIds: ["zangado", "cansado", "com-fome", "com-sono"] },
+      { type: "introduce", wordIds: ["zangada", "cansada", "com-fome", "com-sono"] },
       { type: "repeat-with-me", wordIds: ["como-estas", "estou-bem", "contente", "triste"] },
-      { type: "memory-match", wordIds: ["contente", "triste", "zangado", "com-sono"] },
-      { type: "listen-tap", wordIds: ["contente", "triste", "zangado", "cansado", "com-fome", "com-sono"], choices: 3 },
+      { type: "memory-match", wordIds: ["contente", "triste", "zangada", "com-sono"] },
+      { type: "listen-tap", wordIds: ["contente", "triste", "zangada", "cansada", "com-fome", "com-sono"], choices: 3 },
     ],
   },
 ];
