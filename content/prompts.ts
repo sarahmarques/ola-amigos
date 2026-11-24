@@ -15,6 +15,7 @@ export const prompts: Prompt[] = [
   { id: "say-it-again", en: "Let's say it again together!" },
   { id: "find-the-pairs", en: "Find the pairs! Tap two cards that go together." },
   { id: "try-again", en: "Oops! Let's listen again." },
+  { id: "not-a-pair", en: "Not a pair. Try again!" },
   { id: "unit-done", en: "You did it! Here's a sticker for you!" },
   { id: "means", en: "means" },
 ];

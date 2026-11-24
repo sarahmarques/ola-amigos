@@ -11,11 +11,12 @@ import { Mascot, type MascotLine, type MascotMood } from "@/components/ui/Mascot
 import { Introduce } from "@/components/activities/Introduce";
 import { ListenTap } from "@/components/activities/ListenTap";
 import { RepeatWithMe } from "@/components/activities/RepeatWithMe";
+import { MemoryMatch } from "@/components/activities/MemoryMatch";
 import type { LuaControl } from "@/components/activities/types";
 import { StickerReward } from "./StickerReward";
 
-/** Activity types playable so far; the rest (memory-match, …) arrive in Phase 4 and are skipped. */
-const SUPPORTED = new Set<Activity["type"]>(["introduce", "listen-tap", "repeat-with-me"]);
+/** Activity types playable so far; any others are skipped until they're built. */
+const SUPPORTED = new Set<Activity["type"]>(["introduce", "listen-tap", "repeat-with-me", "memory-match"]);
 
 function ActivityView({ activity, onDone, lua }: { activity: Activity; onDone: () => void; lua: LuaControl }) {
   switch (activity.type) {
@@ -25,6 +26,8 @@ function ActivityView({ activity, onDone, lua }: { activity: Activity; onDone: (
       return <ListenTap activity={activity} onDone={onDone} lua={lua} />;
     case "repeat-with-me":
       return <RepeatWithMe activity={activity} onDone={onDone} lua={lua} />;
+    case "memory-match":
+      return <MemoryMatch activity={activity} onDone={onDone} lua={lua} />;
     default:
       return null;
   }
@@ -58,7 +61,7 @@ export function UnitPlayer({ unitId }: { unitId: string }) {
     preload([
       ...unit.wordIds.flatMap((id) => [wordClip(id), wordClip(id, "en")]),
       ...["muito-bem", "boa"].map((id) => wordClip(id)),
-      ...["listen-and-tap", "your-turn", "try-again", "unit-done"].map(promptClip),
+      ...["listen-and-tap", "your-turn", "try-again", "find-the-pairs", "not-a-pair", "unit-done"].map(promptClip),
     ]);
     return stopAll;
   }, [unit]);

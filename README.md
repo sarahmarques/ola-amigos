@@ -9,7 +9,7 @@ A playful web app that teaches **European (Portugal) Portuguese** to **English-s
   - *Olá e adeus* — hello, goodbye, please, thank you, yes, no
   - *O meu nome* — what's your name?, my name is…, I am…
   - *Como estás?* — how are you?, happy, sad, angry, tired, hungry, sleepy
-- **Activities:** meet the words, listen and tap the right picture, and repeat after Lua (spoken out loud — no microphone). More are planned.
+- **Activities:** meet the words, listen and tap the right picture, repeat after Lua (spoken out loud — no microphone), and a memory game matching pictures to Portuguese sounds. More are planned.
 - **Stickers** for each finished unit, and units unlock one at a time.
 - **Portugal Portuguese only.** Native-sounding pt-PT voices, *tu* forms, and a build check that rejects Brazilian words and grammar.
 - **A parent area**, behind a hold-to-open lock, listing every word with its English meaning and how to say it.

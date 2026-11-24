@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildListenTapRounds, shuffle } from "./rounds";
+import { buildListenTapRounds, buildMemoryDeck, isPair, shuffle } from "./rounds";
 
 /** Small deterministic random generator so tests are repeatable. */
 const seeded = (seed: number) => () => {
@@ -35,5 +35,28 @@ describe("buildListenTapRounds", () => {
   it("never offers more options than there are words", () => {
     const rounds = buildListenTapRounds(["sim", "nao"], 4, seeded(3));
     rounds.forEach((r) => expect(r.options).toHaveLength(2));
+  });
+});
+
+describe("buildMemoryDeck", () => {
+  const words = ["contente", "triste", "zangada", "com-sono"];
+
+  it("has one picture card and one sound card per word, with unique keys", () => {
+    const deck = buildMemoryDeck(words, seeded(7));
+    expect(deck).toHaveLength(words.length * 2);
+    expect(new Set(deck.map((c) => c.key)).size).toBe(deck.length);
+    for (const w of words) {
+      const cards = deck.filter((c) => c.wordId === w);
+      expect(cards.map((c) => c.kind).sort()).toEqual(["picture", "sound"]);
+    }
+  });
+
+  it("matches only a picture and a sound card of the same word", () => {
+    const deck = buildMemoryDeck(words, seeded(2));
+    const find = (wordId: string, kind: "picture" | "sound") => deck.find((c) => c.wordId === wordId && c.kind === kind)!;
+    expect(isPair(find("triste", "picture"), find("triste", "sound"))).toBe(true);
+    expect(isPair(find("triste", "sound"), find("triste", "picture"))).toBe(true);
+    expect(isPair(find("triste", "picture"), find("zangada", "sound"))).toBe(false);
+    expect(isPair(find("triste", "picture"), find("zangada", "picture"))).toBe(false);
   });
 });

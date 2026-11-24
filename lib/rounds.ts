@@ -25,3 +25,23 @@ export function buildListenTapRounds(wordIds: string[], choices: number, rng: Rn
     return { answer, options: shuffle([answer, ...others], rng) };
   });
 }
+
+export type MemoryCard = {
+  /** Unique per card, e.g. "picture:ola". */
+  key: string;
+  wordId: string;
+  /** A picture card shows the word's picture; a sound card says the word in Portuguese. */
+  kind: "picture" | "sound";
+};
+
+/** Two cards per word, one picture and one sound, shuffled. */
+export function buildMemoryDeck(wordIds: string[], rng: Rng = Math.random): MemoryCard[] {
+  const cards = wordIds.flatMap((wordId): MemoryCard[] => [
+    { key: `picture:${wordId}`, wordId, kind: "picture" },
+    { key: `sound:${wordId}`, wordId, kind: "sound" },
+  ]);
+  return shuffle(cards, rng);
+}
+
+/** A pair is one picture card and one sound card for the same word. */
+export const isPair = (a: MemoryCard, b: MemoryCard) => a.wordId === b.wordId && a.kind !== b.kind;
