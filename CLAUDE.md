@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Olá Amigos: a Next.js 15 (App Router) + TypeScript app teaching **European (Portugal) Portuguese** to **English-speaking girls aged 3–7**. Lua the koala is the guide. English is the language of instruction; Portuguese is the target. Exported as a fully static site (`output: "export"` → `out/`), deployed on Netlify. All progress lives in the browser's localStorage — no backend, no accounts, no analytics.
 
-**The project plan, with what's done and what's next, is in `docs/PLAN.md`.** Read it before starting new work, and update its Status section when a phase or feature lands.
+**The project plan, with what's done and what's next, is in `docs/PLAN.md` when it exists.** It's kept locally and git-ignored, so it won't be in a fresh clone, worktree or cloud session. If it's there, read it before starting new work and update its Status section when a phase or feature lands. If it isn't, carry on without it and don't create one.
 
 ## Commands
 
