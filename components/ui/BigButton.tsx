@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, type HTMLMotionProps } from "framer-motion";
+import { motion, type HTMLMotionProps } from "motion/react";
 
 const colours = {
   gum: "bg-gum text-white shadow-[0_8px_0_#2f6249]",

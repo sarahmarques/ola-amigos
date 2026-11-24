@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { getWord } from "@/content";
 import { avatarWordIds, type AvatarId } from "@/content/avatars";
 import { play, playSequence, promptClip, stopAll, wordClip } from "@/lib/audio";

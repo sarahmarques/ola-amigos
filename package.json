@@ -14,8 +14,8 @@
     "icons": "tsx scripts/generate-icons.ts"
   },
   "dependencies": {
-    "framer-motion": "^11.18.2",
     "howler": "^2.2.4",
+    "motion": "^14.14.0",
     "next": "^15.5.29",
     "react": "19.1.0",
     "react-dom": "19.1.0",

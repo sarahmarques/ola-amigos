@@ -17,7 +17,7 @@ A playful web app that teaches **European (Portugal) Portuguese** to **English-s
 
 ## Tech
 
-Next.js 15 (App Router) · TypeScript · Tailwind CSS · Framer Motion · Howler.js · Zustand · Vitest. Audio is generated with Azure neural text-to-speech. The site is a fully static export hosted on Netlify.
+Next.js 15 (App Router) · TypeScript · Tailwind CSS · Motion · Howler.js · Zustand · Vitest. Audio is generated with Azure neural text-to-speech. The site is a fully static export hosted on Netlify.
 
 ## Getting started
 

@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { trees, unitsForTree, units } from "@/content";
 import { play, promptClip, stopAll } from "@/lib/audio";
 import { isTreeUnlocked, isUnitUnlocked, nextUnitId } from "@/lib/progress";

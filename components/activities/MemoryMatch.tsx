@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "motion/react";
 import { getWord } from "@/content";
 import { playSequence, promptClip, stopAll, wordClip } from "@/lib/audio";
 import { buildMemoryDeck, isPair, type MemoryCard } from "@/lib/rounds";

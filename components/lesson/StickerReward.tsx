@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "motion/react";
 import { playSequence, promptClip, stopAll, wordClip } from "@/lib/audio";
 import { BigButton } from "@/components/ui/BigButton";
 
